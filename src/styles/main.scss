@@ -1,29 +1,36 @@
 // abstracts
-@import './abstracts/variables';
-@import './abstracts/mixins';
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
 
 // base
-@import './base/reset';
-@import './base/typography';
-@import './base/base';
+@import "./base/reset";
+@import "./base/typography";
+@import "./base/base";
 
 // layout
-@import './layout/header';
-@import './layout/footer';
+@import "./layout/header";
+@import "./layout/footer";
 // @import './layout/grid';
 
 // components
-@import './components/buttons';
-@import './components/card';
-@import './components/navbar';
-
+@import "./components/buttons";
+@import "./components/card";
+@import "./components/navbar";
+@import "./components/sidebar";
 // pages
-@import './pages/home';
-@import './pages/about';
+@import "./pages/home";
+@import "./pages/about";
 
 // themes
-@import './themes/dark';
-@import './themes/light';
+@import "./themes/dark";
+@import "./themes/light";
 
 // vendors
-@import './vendors/bootstrap';
+@import "./vendors/bootstrap";
+
+body {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
