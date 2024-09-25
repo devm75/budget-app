@@ -13,16 +13,26 @@ aside {
       padding: 0;
       // max-width: 240px;
     }
-    li {
-      display: inline-block;
-      padding: 12px;
-      &:hover {
-        background-color: $background-color-light;
-        cursor: pointer;
+    a {
+      text-decoration: none;
+      color: $font-color-dark;
+
+      span {
+        display: inline-block;
       }
-      a {
-        text-decoration: none;
-        color: $font-color-dark;
+
+      li {
+        display: inline-block;
+        padding: 12px;
+        display: inline-flex;
+        width: 100%;
+        justify-content: start;
+        align-items: center;
+        gap: 6px;
+        &:hover {
+          background-color: $background-color-light;
+          cursor: pointer;
+        }
       }
     }
   }

@@ -8,17 +8,17 @@ import { LiaCreditCardSolid } from "react-icons/lia";
 const SidebarRoutes = [
   {
     label: "Overview",
-    icon: <MdGridView />,
+    Icon: <MdGridView />,
     link: "/",
   },
-  { label: "Transactions", icon: <AiOutlineBars />, link: "/transactions" },
+  { label: "Transactions", Icon: <AiOutlineBars />, link: "/transactions" },
   {
     label: "Scheduled Transactions",
-    icon: LuTimerReset,
+    Icon: <LuTimerReset />,
     link: "/stransactions",
   },
-  { label: "Accounts", icon: <MdAccountBalance />, link: "accounts" },
-  { label: "Credit Cards", icon: <LiaCreditCardSolid />, link: "ccards" },
+  { label: "Accounts", Icon: <MdAccountBalance />, link: "accounts" },
+  { label: "Credit Cards", Icon: <LiaCreditCardSolid />, link: "ccards" },
   //   { label: "Budgets" },
   //   { label: "Debts" },
   //   { label: "Charts" },
@@ -35,12 +35,12 @@ export const Sidebar = () => {
       <aside>
         <nav>
           <ul>
-            {SidebarRoutes.map((ele) => (
-              <li key={ele?.label}>
-                <Link to={ele.link}>
-                  <span>{ele?.icon}</span> {ele?.label}
-                </Link>
-              </li>
+            {SidebarRoutes.map(({ label, link, Icon }) => (
+              <Link to={link}>
+                <li key={label}>
+                  <span> {Icon}</span> {label}
+                </li>
+              </Link>
             ))}
 
             {/* <li>
