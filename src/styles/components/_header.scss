@@ -28,4 +28,8 @@
       //   font-size: medium;
     }
   }
+
+  @media (max-width: $layout-breakpoint-small) {
+    left: 0px;
+  }
 }

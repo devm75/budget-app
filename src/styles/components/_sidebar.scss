@@ -56,4 +56,10 @@
   &.open {
     left: 0;
   }
+
+  @media (max-width: $layout-breakpoint-small) {
+    &.open {
+      left: -220px;
+    }
+  }
 }
