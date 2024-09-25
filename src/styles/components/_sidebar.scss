@@ -1,42 +1,59 @@
-aside {
-  max-width: 240px;
-
-  nav {
-    background-color: $primary-color;
-    height: 100vh;
-    overflow-y: scroll;
-    border-right: 1px solid $font-color-light;
-    scrollbar-width: thin;
-    scrollbar-color: $font-color-dark;
-    ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      padding: 0;
-      // max-width: 240px;
-    }
-    a {
-      text-decoration: none;
-      color: $font-color-dark;
-
-      li {
-        box-sizing: border-box;
-        display: inline-block;
-        padding: 12px;
-        display: inline-flex;
-        width: 100%;
-        justify-content: start;
-        align-items: center;
-        gap: 6px;
-        &:hover {
-          background-color: $background-color-light;
-          cursor: pointer;
+.sidebar {
+  position: fixed;
+  left: -220px;
+  top: 0px;
+  width: 220px;
+  transition: left 0.5s ease;
+  z-index: 10;
+  padding-top: 0px;
+  aside {
+    nav {
+      background-color: $primary-color;
+      height: 100vh;
+      // overflow-y: scroll;
+      border-right: 1px solid $font-color-light;
+      scrollbar-width: thin;
+      scrollbar-color: $font-color-dark;
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        h1 {
+          padding: 17px;
+          margin: 0;
+          background-color: $secondary-color;
+          color: white;
         }
-        span {
-          display: inline-block;
-          margin-top: 4px;
+        a {
+          text-decoration: none;
+          color: $font-color-dark;
+
+          li {
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 12px;
+            display: inline-flex;
+            width: 100%;
+            justify-content: start;
+            align-items: center;
+            gap: 6px;
+            &:hover {
+              background-color: $background-color-light;
+              cursor: pointer;
+            }
+            span {
+              display: inline-block;
+              margin-top: 4px;
+            }
+          }
         }
       }
     }
+  }
+
+  &.open {
+    left: 0;
   }
 }

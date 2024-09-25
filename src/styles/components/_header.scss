@@ -2,6 +2,14 @@
   background-color: $primary-color-blue;
   height: 56px;
   width: 100%;
+  transition: left 0.5s;
+  position: fixed;
+  left: 220px;
+  top: 0;
+  right: 0;
+  &.sb-closed {
+    left: 0px;
+  }
 
   .sidebar-toggler {
     display: flex;

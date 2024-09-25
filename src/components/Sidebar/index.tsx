@@ -31,23 +31,23 @@ const SidebarRoutes = [
 ];
 
 export const Sidebar = () => {
-  const sidebarStatus = useSidebarStore((state) => state.open);
+  const isOpen = useSidebarStore((state) => state.open);
 
-  if (sidebarStatus)
-    return (
-      <div id="sidebar">
-        <aside>
-          <nav>
-            <ul>
-              {SidebarRoutes.map(({ label, link, Icon }) => (
-                <Link to={link}>
-                  <li key={label}>
-                    <span> {Icon}</span> {label}
-                  </li>
-                </Link>
-              ))}
+  return (
+    <div className={`sidebar ${isOpen ? "open" : ""}`}>
+      <aside>
+        <nav>
+          <ul>
+            <h1 className="app-heading">Budget App</h1>
+            {SidebarRoutes.map(({ label, link, Icon }) => (
+              <Link key={label} to={link}>
+                <li key={label}>
+                  <span> {Icon}</span> {label}
+                </li>
+              </Link>
+            ))}
 
-              {/* <li>
+            {/* <li>
               <Link to={`/transactions`}>Transactions</Link>
             </li>
             <li>
@@ -59,10 +59,9 @@ export const Sidebar = () => {
             <li>
               <Link to={`/bills`}>Recurring Bills</Link>
             </li> */}
-            </ul>
-          </nav>
-        </aside>
-      </div>
-    );
-  else return null;
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  );
 };
