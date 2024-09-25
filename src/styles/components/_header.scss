@@ -1,0 +1,23 @@
+.header-container {
+  background-color: $primary-color-blue;
+  height: 56px;
+  width: 100%;
+
+  .sidebar-toggler {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 6px;
+    padding-left: 6px;
+    color: white;
+
+    span {
+      cursor: pointer;
+      font-size: larger;
+    }
+    h3 {
+      font-weight: 400;
+      //   font-size: medium;
+    }
+  }
+}

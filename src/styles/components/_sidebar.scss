@@ -6,6 +6,8 @@ aside {
     height: 100vh;
     overflow-y: scroll;
     border-right: 1px solid $font-color-light;
+    scrollbar-width: thin;
+    scrollbar-color: $font-color-dark;
     ul {
       list-style: none;
       display: flex;
@@ -17,11 +19,8 @@ aside {
       text-decoration: none;
       color: $font-color-dark;
 
-      span {
-        display: inline-block;
-      }
-
       li {
+        box-sizing: border-box;
         display: inline-block;
         padding: 12px;
         display: inline-flex;
@@ -32,6 +31,10 @@ aside {
         &:hover {
           background-color: $background-color-light;
           cursor: pointer;
+        }
+        span {
+          display: inline-block;
+          margin-top: 4px;
         }
       }
     }

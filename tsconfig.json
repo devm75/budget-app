@@ -6,9 +6,14 @@
       "dom.iterable",
       "esnext"
     ],
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["*"]
+      "@components/*": ["src/components/*"],  // Alias for components
+      "@utils/*": ["src/utils/*"],            // Alias for utilities
+      "@hooks/*": ["src/hooks/*"],            // Alias for hooks
+      "@styles/*": ["src/styles/*"],
+      "@store/*": ["src/store/*"],         // Alias for styles
+      "@routes/*":["src/routes/*"],      
     },
     "allowJs": true,
     "skipLibCheck": true,
@@ -25,7 +30,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src/**/*"
   ],
 
 }

@@ -10,13 +10,14 @@
 // layout
 @import "./layout/header";
 @import "./layout/footer";
-// @import './layout/grid';
+@import "./layout/rootLayout";
 
 // components
 @import "./components/buttons";
 @import "./components/card";
 @import "./components/navbar";
 @import "./components/sidebar";
+@import "./components/header";
 // pages
 @import "./pages/home";
 @import "./pages/about";

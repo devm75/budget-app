@@ -3,6 +3,8 @@ import { AiOutlineBars } from "react-icons/ai";
 import { LuTimerReset } from "react-icons/lu";
 import { MdAccountBalance } from "react-icons/md";
 import { LiaCreditCardSolid } from "react-icons/lia";
+import { useSidebarStore } from "../../store/store";
+import { Link } from "react-router-dom";
 
 // const GridView = () => <MdGridView />;
 const SidebarRoutes = [
@@ -28,22 +30,24 @@ const SidebarRoutes = [
   //   { label: "Signout" },
 ];
 
-import { Link } from "react-router-dom";
 export const Sidebar = () => {
-  return (
-    <div id="sidebar">
-      <aside>
-        <nav>
-          <ul>
-            {SidebarRoutes.map(({ label, link, Icon }) => (
-              <Link to={link}>
-                <li key={label}>
-                  <span> {Icon}</span> {label}
-                </li>
-              </Link>
-            ))}
+  const sidebarStatus = useSidebarStore((state) => state.open);
 
-            {/* <li>
+  if (sidebarStatus)
+    return (
+      <div id="sidebar">
+        <aside>
+          <nav>
+            <ul>
+              {SidebarRoutes.map(({ label, link, Icon }) => (
+                <Link to={link}>
+                  <li key={label}>
+                    <span> {Icon}</span> {label}
+                  </li>
+                </Link>
+              ))}
+
+              {/* <li>
               <Link to={`/transactions`}>Transactions</Link>
             </li>
             <li>
@@ -55,9 +59,10 @@ export const Sidebar = () => {
             <li>
               <Link to={`/bills`}>Recurring Bills</Link>
             </li> */}
-          </ul>
-        </nav>
-      </aside>
-    </div>
-  );
+            </ul>
+          </nav>
+        </aside>
+      </div>
+    );
+  else return null;
 };
