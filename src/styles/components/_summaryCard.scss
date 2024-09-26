@@ -7,6 +7,34 @@
   border-radius: $card-border-radius;
   cursor: pointer;
   flex: 0.33;
+  padding: 16px;
+
+  & > div {
+    .half-width {
+      width: 33%;
+      margin-right: 0;
+    }
+    .sc-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      font-size: 1.2rem;
+      .bal-val {
+        color: $color-primary-green;
+      }
+      .cc-val {
+        color: $color-primary-red;
+      }
+    }
+    & > span {
+      font-weight: bold;
+      opacity: 0.8;
+    }
+    .final-amt {
+      color: $color-primary-green;
+      text-align: end;
+    }
+  }
   &:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
