@@ -14,13 +14,16 @@
 
 // components
 @import "./components/buttons";
-@import "./components/card";
+// @import "./components/card";
 @import "./components/navbar";
 @import "./components/sidebar";
 @import "./components/header";
+@import "./components/summaryCard";
+
 // pages
 @import "./pages/home";
 @import "./pages/about";
+@import "./pages/dashboard";
 
 // themes
 @import "./themes/dark";

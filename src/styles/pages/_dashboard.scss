@@ -1,0 +1,18 @@
+.db-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+
+  .db-card-container-top {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    flex: 1;
+    @media (max-width: $layout-breakpoint-small) {
+      flex-direction: column;
+    }
+  }
+}

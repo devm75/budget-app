@@ -1,0 +1,17 @@
+.sc-container {
+  min-height: $card-min-height;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-width: $card-min-width;
+  border-radius: $card-border-radius;
+  cursor: pointer;
+  flex: 0.33;
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  @media (max-width: $layout-breakpoint-small) {
+    flex: 1;
+  }
+}
