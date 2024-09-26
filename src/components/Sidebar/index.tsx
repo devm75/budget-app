@@ -1,3 +1,4 @@
+/// <reference types="react/canary" />
 import { MdGridView } from "react-icons/md";
 import { AiOutlineBars } from "react-icons/ai";
 import { LuTimerReset } from "react-icons/lu";
@@ -5,6 +6,8 @@ import { MdAccountBalance } from "react-icons/md";
 import { LiaCreditCardSolid } from "react-icons/lia";
 import { useSidebarStore } from "../../store/store";
 import { Link } from "react-router-dom";
+import { useIsMobile } from "@hooks/useIsMobile";
+import { useEffect } from "react";
 
 // const GridView = () => <MdGridView />;
 const SidebarRoutes = [
@@ -31,7 +34,50 @@ const SidebarRoutes = [
 ];
 
 export const Sidebar = () => {
-  const isOpen = useSidebarStore((state) => state.open);
+  const {
+    open: isOpen,
+    closeSidebar,
+    openSidebar,
+  } = useSidebarStore((state) => state);
+
+  const isMobile = useIsMobile();
+
+  useEffect(() => {
+    if (isMobile) {
+      closeSidebar();
+    } else {
+      openSidebar();
+    }
+  }, [isMobile]);
+
+  if (isMobile && isOpen) {
+    return (
+      <>
+        {/* <div className={`overlay ${isOpen ? "open" : ""}`}></div> */}
+        <div
+          onClick={closeSidebar}
+          className={`sidebar-overlay ${isOpen ? "open" : ""}`}
+        >
+          <div className="sidebar-responsive">
+            <aside>
+              <nav>
+                <ul>
+                  <h1 className="app-heading">Budget App</h1>
+                  {SidebarRoutes.map(({ label, link, Icon }) => (
+                    <Link key={label} to={link}>
+                      <li key={label}>
+                        <span> {Icon}</span> {label}
+                      </li>
+                    </Link>
+                  ))}
+                </ul>
+              </nav>
+            </aside>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
@@ -46,19 +92,6 @@ export const Sidebar = () => {
                 </li>
               </Link>
             ))}
-
-            {/* <li>
-              <Link to={`/transactions`}>Transactions</Link>
-            </li>
-            <li>
-              <Link to={`/budgets`}>Budgets</Link>
-            </li>
-            <li>
-              <Link to={`/pots`}>Pots</Link>
-            </li>
-            <li>
-              <Link to={`/bills`}>Recurring Bills</Link>
-            </li> */}
           </ul>
         </nav>
       </aside>

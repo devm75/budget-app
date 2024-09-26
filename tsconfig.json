@@ -11,8 +11,8 @@
       "@components/*": ["src/components/*"],  // Alias for components
       "@utils/*": ["src/utils/*"],            // Alias for utilities
       "@hooks/*": ["src/hooks/*"],            // Alias for hooks
-      "@styles/*": ["src/styles/*"],
-      "@store/*": ["src/store/*"],         // Alias for styles
+      "@styles/*": ["src/styles/*"],          // Alias for styles
+      "@store/*": ["src/store/*"],         
       "@routes/*":["src/routes/*"],      
     },
     "allowJs": true,

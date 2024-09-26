@@ -6,6 +6,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Root } from "./routes/Root";
 import ErrorPage from "./components/RouteError";
+/// <reference types="react/canary" />
+
 const router = createBrowserRouter([
   {
     path: "/",
