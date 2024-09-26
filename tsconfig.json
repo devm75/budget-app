@@ -14,6 +14,7 @@
       "@styles/*": ["src/styles/*"],          // Alias for styles
       "@store/*": ["src/store/*"],         
       "@routes/*":["src/routes/*"],      
+      "@typeDefs/*":["src/typeDefs/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,

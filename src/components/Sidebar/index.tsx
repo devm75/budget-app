@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { useIsMobile } from "@hooks/useIsMobile";
 import { useEffect } from "react";
 
-// const GridView = () => <MdGridView />;
+
 const SidebarRoutes = [
   {
     label: "Overview",
@@ -52,30 +52,27 @@ export const Sidebar = () => {
 
   if (isMobile && isOpen) {
     return (
-      <>
-        {/* <div className={`overlay ${isOpen ? "open" : ""}`}></div> */}
-        <div
-          onClick={closeSidebar}
-          className={`sidebar-overlay ${isOpen ? "open" : ""}`}
-        >
-          <div className="sidebar-responsive">
-            <aside>
-              <nav>
-                <ul>
-                  <h1 className="app-heading">Budget App</h1>
-                  {SidebarRoutes.map(({ label, link, Icon }) => (
-                    <Link key={label} to={link}>
-                      <li key={label}>
-                        <span> {Icon}</span> {label}
-                      </li>
-                    </Link>
-                  ))}
-                </ul>
-              </nav>
-            </aside>
-          </div>
+      <div
+        onClick={closeSidebar}
+        className={`sidebar-overlay ${isOpen ? "open" : ""}`}
+      >
+        <div className="sidebar-responsive">
+          <aside>
+            <nav>
+              <ul>
+                <h1 className="app-heading">Budget App</h1>
+                {SidebarRoutes.map(({ label, link, Icon }) => (
+                  <Link key={label} to={link}>
+                    <li key={label}>
+                      <span> {Icon}</span> {label}
+                    </li>
+                  </Link>
+                ))}
+              </ul>
+            </nav>
+          </aside>
         </div>
-      </>
+      </div>
     );
   }
 
